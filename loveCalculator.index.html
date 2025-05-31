@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Calculator 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(8px);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      width: 80%;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6f91;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4e78;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💘 Love Calculator 💘</h1>
+    <input type="text" id="name1" placeholder="Aapka Naam" />
+    <br/>
+    <input type="text" id="name2" placeholder="Unka Naam" />
+    <br/>
+    <button onclick="calculateLove()">Calculate 💕</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateLove() {
+      const name1 = document.getElementById("name1").value.trim();
+      const name2 = document.getElementById("name2").value.trim();
+      const result = document.getElementById("result");
+
+      if (name1 === "" || name2 === "") {
+        result.innerText = "Dono naam daaliye pehle ❤️";
+        return;
+      }
+
+      const lovePercent = Math.floor(Math.random() * 41) + 60; // 60 to 100%
+      result.innerText = ${name1} ❤️ ${name2} = ${lovePercent}% Love Match!;
+    }
+  </script>
+</body>
+</html>
